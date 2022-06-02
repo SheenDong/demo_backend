@@ -1,0 +1,6 @@
+/.idea/
+/develop/jdk/
+/running/
+/tool/
+/develop/module/module.iml
+**/target

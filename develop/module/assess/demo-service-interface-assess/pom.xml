@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.digiwin.demo</groupId>
+		<artifactId>assess</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>demo-service-interface-assess</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+	
+	<name>demo-service-interface-assess</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<module.basedir>${project.parent.basedir}</module.basedir>
+		<module.name>assess</module.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.6</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.mybatis</groupId>-->
+<!--			<artifactId>mybatis-spring</artifactId>-->
+<!--			<version>1.3.1</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.mybatis</groupId>-->
+<!--			<artifactId>mybatis</artifactId>-->
+<!--			<version>3.4.6</version>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.73</version>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.*</exclude>
+				</excludes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>genernate-module-interface</id>
+						<phase>package</phase>
+						<configuration>
+							<tasks>								
+								<copy todir="${module.basedir}/target/${module.name}">									
+									<fileset dir="${basedir}/target">
+										<include name="*.jar"/>
+									</fileset>
+								</copy>
+								<copy todir="${module.basedir}/target/${module.name}">
+									<fileset dir="${basedir}/src/main/resources">										
+										<include name="**/*.*"/>
+									</fileset>
+								</copy>								
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

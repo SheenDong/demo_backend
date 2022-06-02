@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.digiwin.demo</groupId>
+		<artifactId>modules</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>assess</artifactId>
+	<packaging>pom</packaging>
+	
+	<name>assess</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>demo-service-interface-assess</module>
+		<module>demo-service-impl-assess</module>
+	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.digiwin.demo</groupId>
+				<artifactId>demo-service-interface-assess</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+
+					<compilerArgument>-parameters</compilerArgument>
+					<testCompilerArgument>-parameters</testCompilerArgument>
+
+<!--					<outputDirectory>-->
+<!--						/Users/sheen/Documents/Company/DigiWin/Project/dwapiplatform-appbackend-dev-4.1.0.1000/demo_backend/running/app_backend/application/module/assess-->
+<!--					</outputDirectory>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
