@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "58cdab79-942c-4483-9202-c1848d907300",
+		"name": "考核项目",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9637112"
+	},
+	"item": [
+		{
+			"name": "获取问题详情",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/restful/service/assess/question?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"restful",
+						"service",
+						"assess",
+						"question"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "问题识别",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": {\n        \"id\": \"1\",\n        \"type\": \"硬件故障\",\n        \"origin\": \"内部\",\n        \"occurTime\": \"2022-05-31\",\n        \"expectCloseTime\": \"2022-06-04\",\n        \"defectName\": \"螺口断裂\",\n        \"defectLevel\": \"一级\",\n        \"description\": \"机械设备螺口断裂\",\n        \"imgUrl\": \"http://www.baidu.com\",\n        \"identifyInfo\": null,\n        \"teamMember\": null,\n        \"planTable\": null,\n        \"node\": \"IDENTIFY_STEP\",\n        \"identifyInfoDto\": {\n            \"isRepeat\": true,\n            \"repeatNum\": 3,\n            \"riskLevel\": \"一般\",\n            \"urgent\": \"紧急\",\n            \"solution\": \"8D解决方案\",\n            \"principal\": \"张三\",\n            \"isWhetherVersion\": false\n        },\n        \"planTableDescriptionDtoList\": null,\n        \"teamMemberDtoList\": null,\n        \"operation\": \"confirm\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/restful/service/assess/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"restful",
+						"service",
+						"assess",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "D1&D2解决方案",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": {\n        \"id\": \"1\",\n        \"type\": \"硬件故障\",\n        \"origin\": \"内部\",\n        \"occurTime\": \"2022-05-31\",\n        \"expectCloseTime\": \"2022-06-04\",\n        \"defectName\": \"螺口断裂\",\n        \"defectLevel\": \"一级\",\n        \"description\": \"机械设备螺口断裂\",\n        \"imgUrl\": \"http://www.baidu.com\",\n        \"identifyInfo\": null,\n        \"teamMember\": null,\n        \"planTable\": null,\n        \"node\": \"HANDLE_D1_D2\",\n        \"identifyInfoDto\": {\n            \"isRepeat\": true,\n            \"repeatNum\": 3,\n            \"riskLevel\": \"一般\",\n            \"urgent\": \"紧急\",\n            \"solution\": null,\n            \"principal\": \"张三\",\n            \"isWhetherVersion\": false\n        },\n        \"planTableDescriptionDtoList\": [\n            {\n                \"no\": \"1\",\n                \"step\": \"D3-围堵措施\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-01\",\n                \"needAttachment\": \"Y\",\n                \"place\": null\n            },\n            {\n                \"no\": \"2\",\n                \"step\": \"D4-根本原因分析\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": null\n            },\n            {\n                \"no\": \"3\",\n                \"step\": \"D5-纠正措施\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": null\n            },\n            {\n                \"no\": \"4\",\n                \"step\": \"D6-纠正措施验证\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": null\n            },\n            {\n                \"no\": \"5\",\n                \"step\": \"D7-预防措施\",\n                \"handler\": \"王鹏\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": null\n            },\n            {\n                \"no\": \"6\",\n                \"step\": \"D8-处理确认\",\n                \"handler\": \"王鹏\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": null\n            }\n        ],\n        \"teamMemberDtoList\": [\n            {\n                \"name\": \"许详\",\n                \"department\": \"A\",\n                \"position\": \"经理\",\n                \"teamRole\": \"组长\"\n            },\n            {\n                \"name\": \"王鹏\",\n                \"department\": \"A\",\n                \"position\": \"测试\",\n                \"teamRole\": \"组员\"\n            }\n        ],\n        \"operation\": \"confirm\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/restful/service/assess/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"restful",
+						"service",
+						"assess",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "D3解决方案",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": {\n        \"id\": \"1\",\n        \"type\": \"硬件故障\",\n        \"origin\": \"内部\",\n        \"occurTime\": \"2022-05-31\",\n        \"expectCloseTime\": \"2022-06-04\",\n        \"defectName\": \"螺口断裂\",\n        \"defectLevel\": \"一级\",\n        \"description\": \"机械设备螺口断裂\",\n        \"imgUrl\": \"http://www.baidu.com\",\n        \"identifyInfo\": null,\n        \"teamMember\": null,\n        \"planTable\": null,\n        \"node\": \"HANDLE_D1_D2\",\n        \"identifyInfoDto\": {\n            \"isRepeat\": true,\n            \"repeatNum\": 3,\n            \"riskLevel\": \"一般\",\n            \"urgent\": \"紧急\",\n            \"solution\": null,\n            \"principal\": \"张三\",\n            \"isWhetherVersion\": false\n        },\n        \"planTableDescriptionDtoList\": [\n            {\n                \"no\": \"1\",\n                \"step\": \"D3-围堵措施\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-01\",\n                \"needAttachment\": \"Y\",\n                \"place\": \"123\",\n                \"attachmentList\": \"[{\\\"name\\\":\\\"附件1\\\",\\\"url\\\":\\\"www.baidu.com\\\"}]\"\n            },\n            {\n                \"no\": \"2\",\n                \"step\": \"D4-根本原因分析\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": \"123\"\n            },\n            {\n                \"no\": \"3\",\n                \"step\": \"D5-纠正措施\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": \"123\"\n            },\n            {\n                \"no\": \"4\",\n                \"step\": \"D6-纠正措施验证\",\n                \"handler\": \"许详\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": \"123\"\n            },\n            {\n                \"no\": \"5\",\n                \"step\": \"D7-预防措施\",\n                \"handler\": \"王鹏\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": \"123\"\n            },\n            {\n                \"no\": \"6\",\n                \"step\": \"D8-处理确认\",\n                \"handler\": \"王鹏\",\n                \"estimatedFinishTime\": \"2022-06-02\",\n                \"needAttachment\": \"N\",\n                \"place\": \"123\"\n            }\n        ],\n        \"teamMemberDtoList\": [\n            {\n                \"name\": \"许详\",\n                \"department\": \"A\",\n                \"position\": \"经理\",\n                \"teamRole\": \"组长\"\n            },\n            {\n                \"name\": \"王鹏\",\n                \"department\": \"A\",\n                \"position\": \"测试\",\n                \"teamRole\": \"组员\"\n            }\n        ],\n        \"operation\": \"confirm\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/restful/service/assess/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"restful",
+						"service",
+						"assess",
+						"question"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
