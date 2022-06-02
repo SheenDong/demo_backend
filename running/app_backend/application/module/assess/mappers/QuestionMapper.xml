@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digiwin.demo.assess.mapper.QuestionMapper">
+
+<!--    <select id="findById" resultType="com.digiwin.demo.assess.pojo.Question">-->
+<!--        SELECT * FROM question WHERE id = #{id} AND node = #{node}-->
+<!--    </select>-->
+
+<!--    <select id="findByIdAndNode" resultType="com.digiwin.demo.assess.pojo.Question">-->
+<!--        SELECT * FROM question WHERE id = #{id} AND node = #{node}-->
+<!--    </select>-->
+</mapper>
